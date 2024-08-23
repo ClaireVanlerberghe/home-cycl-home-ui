@@ -1,0 +1,15 @@
+.accueil-banniere {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 85px;
+    .banniere-photo {
+        width: 400px;
+    }
+    .banniere-bouton {
+        width: 500px;
+        .banniere {
+            margin-bottom: 55px;
+        }
+    }
+}

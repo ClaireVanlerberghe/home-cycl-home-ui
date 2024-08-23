@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Jomolhari&display=swap');
+
+body {
+    background-color: #FFF9F4;
+    font-family: "Jomolhari", serif;
+    
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 35px;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    background-color: #272949;
+    color: #FFF9F4;
+    border: none;
+    padding: 13px 18px;
+    font-family: "Jomolhari", serif;
+    font-size: 17px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
