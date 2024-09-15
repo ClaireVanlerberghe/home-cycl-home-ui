@@ -5,16 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { CarouselModule } from 'primeng/carousel';
+import { HttpClientModule } from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AccueilComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    AccueilComponent,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

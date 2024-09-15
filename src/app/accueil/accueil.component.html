@@ -8,3 +8,41 @@
         <button class="bouton-accueil">Je prends rendez-vous</button>
     </div>
 </div>
+<img src="./../../assets/img-accueil2.png" class="img-accueil2" alt="photo d'un cycliste en montagne">
+
+<div class="card">
+    <p-carousel 
+        [numVisible]="3" 
+        [numScroll]="3" 
+        [circular]="false" 
+        [responsiveOptions]="responsiveOptions">
+            <ng-template let-intervention pTemplate="item">
+                <div class="border-1 surface-border border-round m-2 p-3">
+                    <div class="mb-3">
+                        <div class="relative mx-auto">
+                            <img 
+                                src="https://primefaces.org/cdn/primeng/images/demo/intervention/{{ intervention.image }}" 
+                                [alt]="intervention.name" 
+                                class="w-full border-round" />
+                            <p-tag 
+                                [value]="intervention.inventoryStatus"  
+                                class="absolute" 
+                                [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                        </div>
+                    </div>
+                    <div class="mb-3 font-medium">
+                        {{ intervention.name }}
+                    </div>
+                    <div class="flex justify-content-between align-items-center">
+                    <div class="mt-0 font-semibold text-xl">
+                        {{ intervention.price + "€" }}
+                    </div>
+                        <span>
+                            <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                            <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                        </span>
+                    </div>
+                </div>
+            </ng-template>
+    </p-carousel>
+</div>
