@@ -18,3 +18,29 @@
     width: 100%;
     margin: 45px 0;
 }
+
+
+
+.mb-3 {
+    font-size: 20px;
+}
+.border-1 {
+    width: 90%;
+    height: 98%;
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+    border-radius: 30px;
+    font-size: 15px;
+    
+}
+.interventionDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    max-height: calc(1.5em * 3); 
+    line-height: 1.5; 
+    word-break: break-all; /* Permet de couper les mots longs */
+    overflow-wrap: break-word; /* Permet de couper les mots pour éviter le débordement */
+  }
+  

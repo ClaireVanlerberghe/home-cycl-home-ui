@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
-import { HttpClient } from '@angular/common/http';
+import { InterventionsService } from '../services/interventions.service';
 
 @Component({
   selector: 'app-accueil',
@@ -11,35 +11,44 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
     imports: [CarouselModule, ButtonModule, TagModule],
 })
-export class AccueilComponent {
+export class AccueilComponent implements OnInit{
 
   responsiveOptions: any[] | undefined;
+  interventions: any[] = [];
 
-    constructor( private http: HttpClient ) {}
+  constructor(private interventionsService: InterventionsService) { }
 
-    ngOnInit() {
-        this.http.get('/api/data').subscribe(data => {
-            console.log(data);
-          });
+  ngOnInit(): void {
+    this.interventionsService.getInterventions().subscribe(data => {
+      this.interventions = data;
+      this.interventions.forEach(intervention => {
+        console.log('test', intervention.title)
+        return intervention
+        
+      });
+    }, error => {
+      console.error('Erreur lors de la récupération des interventions', error);
+    });
 
-        this.responsiveOptions = [
-            {
-                breakpoint: '1199px',
-                numVisible: 1,
-                numScroll: 1
-            },
-            {
-                breakpoint: '991px',
-                numVisible: 2,
-                numScroll: 1
-            },
-            {
-                breakpoint: '767px',
-                numVisible: 1,
-                numScroll: 1
-            }
-        ];
-    }
-
+  this.responsiveOptions = [
+      {
+          breakpoint: '1199px',
+          numVisible: 1,
+          numScroll: 1
+      },
+      {
+          breakpoint: '991px',
+          numVisible: 2,
+          numScroll: 1
+      },
+      {
+          breakpoint: '767px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ];
+  }
 
 }
+
+

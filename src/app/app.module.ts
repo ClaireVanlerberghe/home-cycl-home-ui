@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CarouselModule } from 'primeng/carousel';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
