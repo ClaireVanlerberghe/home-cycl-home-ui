@@ -1,3 +1,4 @@
+
 <div class="accueil-banniere">
     
     <img src="./../../assets/img-accueil.png" class="banniere-photo" alt="image de la bannière d'accueil qui représente un vélo">
@@ -16,20 +17,50 @@
 <div class="cards">
     <p-carousel 
     class="test"
-    [value]="interventions" 
+    [value]="maintenances" 
     [numVisible]="4" 
-    [numScroll]="4" 
-    [circular]="false" 
+    [numScroll]="1" 
+    [showIndicators]="false"
+    [circular]="true" 
     [responsiveOptions]="responsiveOptions">
-        <ng-template let-intervention pTemplate="item" class="card">
+        <ng-template let-maintenance pTemplate="item" class="card">
             <div class="border-1 surface-border border-round m-2 p-3">
                 <div class="mb-3 font-medium">
-                    {{ intervention.title }}
+                    {{ maintenance.title }}
                 </div>
-                <div class="interventionDescription">{{ intervention.description }}</div>
+                <div class="interventionDescription">{{ maintenance.description }}</div>
                 <div class="flex justify-content-between align-items-center">
                 <div class="mt-0 font-semibold text-xl">
-                    {{ intervention.price + '€' }}
+                    {{ maintenance.price + '€' }}
+                </div>
+                </div>
+            </div>
+        </ng-template>
+</p-carousel>
+</div>
+
+<img src="./../../assets/img-accueil3.png" class="img-accueil2" alt="photo d'un gomme qui resert une roue de velo">
+
+<h2>Réparations</h2>
+
+<div class="cards">
+    <p-carousel 
+    class="test"
+    [value]="reparations" 
+    [numVisible]="4" 
+    [numScroll]="1" 
+    [showIndicators]="false"
+    [circular]="true" 
+    [responsiveOptions]="responsiveOptions">
+        <ng-template let-reparation pTemplate="item" class="card">
+            <div class="border-1 surface-border border-round m-2 p-3">
+                <div class="mb-3 font-medium">
+                    {{ reparation.title }}
+                </div>
+                <div class="interventionDescription">{{ reparation.description }}</div>
+                <div class="flex justify-content-between align-items-center">
+                <div class="mt-0 font-semibold text-xl">
+                    {{ reparation.price + '€' }}
                 </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { InterventionsService } from '../services/interventions.service';
+import { Intervention } from '../interfaces/intervention.model';
 
 @Component({
   selector: 'app-accueil',
@@ -14,19 +15,17 @@ import { InterventionsService } from '../services/interventions.service';
 export class AccueilComponent implements OnInit{
 
   responsiveOptions: any[] | undefined;
-  interventions: any[] = [];
+  maintenances: Intervention[] = [];
+  reparations: Intervention[] = [];
 
   constructor(private interventionsService: InterventionsService) { }
 
   ngOnInit(): void {
-    this.interventionsService.getInterventions().subscribe(data => {
-      this.interventions = data;
-      this.interventions.forEach(intervention => {
-        console.log('test', intervention.title)
-        return intervention
-        
-      });
-    }, error => {
+    this.interventionsService.getInterventions().subscribe(
+      (data: Intervention[]) => {
+        this.maintenances = data.filter((maintenance: Intervention) => maintenance.id_categories === 1);
+        this.reparations = data.filter((reparation: Intervention) => reparation.id_categories === 2);
+      }, error => {
       console.error('Erreur lors de la récupération des interventions', error);
     });
 
