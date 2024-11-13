@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'home-cycl-home-ui';
-  showHeader: boolean = true;
+  showHeaderFooter: boolean = true;
   
 
   constructor(private router: Router) {
@@ -22,8 +22,8 @@ export class AppComponent {
 
    //N'affiche pas le header sur les pages login et signup
    checkRoute(url: string) {
-    const noHeaderRoutes = ['/login', '/signup'];
-    this.showHeader = !noHeaderRoutes.includes(url);
+    const noHeaderFooterRoutes = ['/login', '/signup'];
+    this.showHeaderFooter = !noHeaderFooterRoutes.includes(url);
   }
 
 }

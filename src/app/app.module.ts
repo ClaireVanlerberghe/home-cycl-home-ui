@@ -7,7 +7,11 @@ import { HeaderComponent } from './header/header.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CarouselModule } from 'primeng/carousel';
 import { HttpClientModule } from '@angular/common/http';
-import { SignupComponent } from './signup/signup.component'
+import { SignupComponent } from './signup/signup.component';
+import { FooterComponent } from './footer/footer.component'
+import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabelModule } from 'primeng/floatlabel'
 
 
 @NgModule({
@@ -15,13 +19,17 @@ import { SignupComponent } from './signup/signup.component'
     AppComponent,
     HeaderComponent,
     SignupComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     AccueilComponent,
-    CarouselModule
+    CarouselModule,
+    FormsModule,
+    InputTextModule,
+    FloatLabelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

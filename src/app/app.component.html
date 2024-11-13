@@ -1,4 +1,7 @@
-<div class="showHeader" *ngIf="showHeader">
+<div *ngIf="showHeaderFooter">
     <app-header></app-header>
 </div>
 <router-outlet></router-outlet>
+<div *ngIf="showHeaderFooter">
+    <app-footer></app-footer>
+</div>
