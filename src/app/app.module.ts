@@ -8,28 +8,29 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { CarouselModule } from 'primeng/carousel';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
-import { FooterComponent } from './footer/footer.component'
-import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 import { InputTextModule } from 'primeng/inputtext';
-import { FloatLabelModule } from 'primeng/floatlabel'
+import { LoginComponent } from './login/login.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SignupComponent,
     FooterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     AccueilComponent,
+    SignupComponent,
     CarouselModule,
-    FormsModule,
     InputTextModule,
-    FloatLabelModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
