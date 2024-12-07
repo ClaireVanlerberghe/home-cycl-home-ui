@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  message = '';
   title = 'home-cycl-home-ui';
   showHeaderFooter: boolean = true;
   
@@ -19,6 +21,7 @@ export class AppComponent {
       }
     });
    }
+
 
    //N'affiche pas le header sur les pages login et signup
    checkRoute(url: string) {

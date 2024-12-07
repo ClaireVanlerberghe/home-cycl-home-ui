@@ -16,31 +16,106 @@
 
 .img-accueil2 {
     width: 100%;
-    margin: 45px 0;
+    margin: 35px 0 0 0;
 }
 
-
-
-.mb-3 {
-    font-size: 20px;
-}
-.border-1 {
-    width: 90%;
-    height: 98%;
-    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
-    border-radius: 30px;
-    font-size: 15px;
-    
-}
-.interventionDescription {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; 
-    -webkit-box-orient: vertical; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    max-height: calc(1.5em * 3); 
-    line-height: 1.5; 
-    word-break: break-all; /* Permet de couper les mots longs */
-    overflow-wrap: break-word; /* Permet de couper les mots pour éviter le débordement */
+/* Style général du conteneur carousel */
+.cards ::ng-deep .p-carousel-container {
+    border-radius: 12px;
+    padding: 20px 10px;
+   
   }
+  
+  /* Style des items */
+  .cards p-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cards ::ng-deep .p-carousel-item .border-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cards ::ng-deep .p-carousel-item .border-1:hover {
+    transform: scale(1.01); /* Effet zoom sur hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  }
+
+  .cards ::ng-deep .p-carousel-item {
+    display: flex;
+    justify-content: center; /* Centrer les cartes dans le carousel */
+    padding: 0 10px; /* Espacement horizontal */
+  }
+  
+  /* Titre des items */
+  .cards .font-medium {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  /* Description des items */
+  .cards .interventionDescription {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.6;
+  }
+  
+  /* Prix */
+  .cards .font-semibold {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Boutons précédent/suivant */
+  .cards ::ng-deep .p-carousel-prev,
+  .cards ::ng-deep .p-carousel-next {
+    font-size: 3rem !important;
+    width: 50px; /* Largeur des boutons de navigation */
+    height: 50px; /* Hauteur des boutons de navigation */
+    background-color: transparent; /* Fond transparent */
+    border: none; /* Pas de bordure */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none; /* Pas de shadow */
+    color: #101010; /* Couleur des flèches */
+    cursor: pointer; /* Curseur de la souris */
+    transition: color 0.3s ease;
+  }
+  
+  .cards ::ng-deep .p-carousel-prev:hover,
+  .cards ::ng-deep .p-carousel-next:hover {
+    color: black;
+    transform: scale(1.10);
+  }
+  
+  /* Pagination (indicateurs) */
+  .cards ::ng-deep .p-carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .cards ::ng-deep .p-carousel-indicator {
+    width: 12px;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
   

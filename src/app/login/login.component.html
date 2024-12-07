@@ -1,13 +1,41 @@
 <div class="background">
     <div class="loginContainer">
-        <div class="addressForm">
-            <h2>Je saisis mon adresse</h2>
-            <input type="text" placeholder="Mon adresse"> <!-- Voir par rapport à googlemaps api -->
+        <div class="form">
+            <h2 class="title">Je saisis mon adresse</h2>
+            <div class="autocomplete-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="searchQuery"
+                  (input)="onSearch()"
+                  placeholder="Saisissez une adresse"
+                />
+                <ul class="suggestions" *ngIf="suggestions.length > 0">
+                  <li
+                    *ngFor="let suggestion of suggestions"
+                    class="suggestion"
+                    (click)="selectSuggestion(suggestion)"
+                  >
+                    {{ suggestion.properties.label }}
+                  </li>
+                </ul>
+                <div class="no-suggestions" *ngIf="showNoSuggestions">
+                  Aucune suggestion trouvée.
+                </div>
+              </div>
+              
+            <button class="bouton" (click)="addSuggestionLocalStorage(searchQuery)">Valider</button>
         </div>
-        <div class="loginForm">
-            <h2>Je me connecte</h2>
-            <input type="email" placeholder="Mon email">
-            <input type="password" placeholder="Mon mot de passe">
+        <div class="form">
+            <h2 class="title">Je me connecte</h2>
+            <input  type="email" 
+                    placeholder="Mon email"
+                    [(ngModel)]="email">
+            <input  type="password" 
+                    placeholder="Mon mot de passe"
+                    [(ngModel)]="password">
+                    
+            <button class="bouton" (click)="connexionButtom()">Valider</button>
         </div>
     </div>
 </div>

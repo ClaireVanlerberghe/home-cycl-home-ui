@@ -7,7 +7,7 @@
             <h1 class="banniere-titre">L'entretien ou la réparation de votre vélo, sans vous déplacer ? </h1>
             <p class="banniere-description">Profitez d’un service pratique et rapide : nous venons directement chez vous pour réparer ou entretenir votre vélo. Plus besoin de vous déplacer, prenez rendez-vous et laissez nos experts s'occuper de tout !</p>
         </div>
-        <button class="bouton-accueil">Je prends rendez-vous</button>
+        <button class="bouton">Je prends rendez-vous</button>
     </div>
 </div>
 <img src="./../../assets/img-accueil2.png" class="img-accueil2" alt="photo d'un cycliste en montagne">
@@ -16,13 +16,11 @@
 
 <div class="cards">
     <p-carousel 
-    class="test"
-    [value]="maintenances" 
-    [numVisible]="4" 
-    [numScroll]="1" 
+    [value]="interventions" 
+    [numVisible]="3" 
+    [numScroll]="3" 
     [showIndicators]="false"
-    [circular]="true" 
-    [responsiveOptions]="responsiveOptions">
+    [circular]="true">
         <ng-template let-maintenance pTemplate="item" class="card">
             <div class="border-1 surface-border border-round m-2 p-3">
                 <div class="mb-3 font-medium">
@@ -41,29 +39,3 @@
 
 <img src="./../../assets/img-accueil3.png" class="img-accueil2" alt="photo d'un gomme qui resert une roue de velo">
 
-<h2>Réparations</h2>
-
-<div class="cards">
-    <p-carousel 
-    class="test"
-    [value]="reparations" 
-    [numVisible]="4" 
-    [numScroll]="1" 
-    [showIndicators]="false"
-    [circular]="true" 
-    [responsiveOptions]="responsiveOptions">
-        <ng-template let-reparation pTemplate="item" class="card">
-            <div class="border-1 surface-border border-round m-2 p-3">
-                <div class="mb-3 font-medium">
-                    {{ reparation.title }}
-                </div>
-                <div class="interventionDescription">{{ reparation.description }}</div>
-                <div class="flex justify-content-between align-items-center">
-                <div class="mt-0 font-semibold text-xl">
-                    {{ reparation.price + '€' }}
-                </div>
-                </div>
-            </div>
-        </ng-template>
-</p-carousel>
-</div>

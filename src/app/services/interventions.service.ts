@@ -1,17 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InterventionsService {
+  private apiUrl = 'http://localhost:3000/api';
 
-  private baseUrl = 'http://localhost:8000/intervention/';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getInterventions(): Observable<any> {
-    return this.http.get(`${this.baseUrl}interventions/`);
+  getInterventions(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/interventions`);
   }
 }

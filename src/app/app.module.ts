@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CarouselModule } from 'primeng/carousel';
-import { HttpClientModule } from '@angular/common/http';
+
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { FooterComponent } from './footer/footer.component';
-import { InputTextModule } from 'primeng/inputtext';
 import { LoginComponent } from './login/login.component';
-
+import { ButtonModule } from 'primeng/button';
+import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 
 
@@ -20,7 +22,7 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -29,10 +31,15 @@ import { LoginComponent } from './login/login.component';
     AccueilComponent,
     SignupComponent,
     CarouselModule,
-    InputTextModule,
+    ButtonModule,
+    FormsModule,
     
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

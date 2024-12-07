@@ -5,6 +5,7 @@ body {
     font-family: "Jomolhari", serif;
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 h1 {
@@ -16,14 +17,34 @@ p {
     font-size: 20px;
 }
 
-button {
+h2 {
+    font-weight: 300;
+    font-size: 35px;
+    margin: 0;
+}
+
+.bouton {
     background-color: #272949;
     color: #FFF9F4;
     border: none;
-    padding: 13px 18px;
+    padding: 9px 20px;
+    margin-top: 10px;
     font-family: "Jomolhari", serif;
     font-size: 17px;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
+}
+
+input {
+    width: 66%;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 18px;
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.3);
+    font-family: "Jomolhari", serif;
+    font-size: 17px;
+    color: black;
+    outline: none;
+    margin-bottom: 32px;
 }
