@@ -1,9 +1,13 @@
 <div class="background">
     <div class="signupContainer">
-        <h1>Je m'inscris</h1>
-        <div class="signupForm">
-            <input type="text" placeholder="Mon email">
+        <div class="form">
+            <h1 class="title">Je m'inscris</h1>
+            <input type="email" placeholder="Mon email" [(ngModel)]="email">
+            <input type="text" placeholder="Mon nom" [(ngModel)]="lastName">
+            <input type="text" placeholder="Mon prénom" [(ngModel)]="firstName">
+            <input type="tel" placeholder="Mon numéro de téléphone" [(ngModel)]="phone">
+            <input type="password" placeholder="Mon mot de passe" [(ngModel)]="password">
+            <button class="bouton" (click)="signupButtom()">Valider</button>
         </div>
     </div>
-
 </div>

@@ -117,5 +117,21 @@
     margin: 0 5px;
     transition: background-color 0.3s ease;
   }
-  
-  
+
+  .contentCenter{
+    display: flex;
+    justify-content: center;
+  .reparation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    .reparationText {
+      width: 33%;
+      font-size: 35px;
+    }
+    button {
+      height: 50px;
+    }
+  }
+}

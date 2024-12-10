@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,9 +13,10 @@ import { SignupComponent } from './signup/signup.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { ButtonModule } from 'primeng/button';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './auth/auth.interceptor';
-
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogConfirmAddressComponent } from './modales/dialog-confirm-address/dialog-confirm-address.component';
 
 
 @NgModule({
@@ -22,24 +24,28 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    DialogConfirmAddressComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     AccueilComponent,
-    SignupComponent,
     CarouselModule,
     ButtonModule,
     FormsModule,
-    
+    DynamicDialogModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,
-  }],
+  },
+    DialogService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,27 @@
+.display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 120px;
+    align-items: center;
+    .iconButton {
+        border: none;
+        background: none;
+        cursor: pointer;
+        border-radius: 50px;
+        height: 35px;
+        width: 35px;
+        &:hover {
+            background-color: rgba(197, 197, 197, 40%);
+        }
+    }
+}
+.bouton {
+    width: 100px;
+    position: absolute;
+    right: 8%;
+}
+
+.modale {
+    border-radius: 25%;
+}

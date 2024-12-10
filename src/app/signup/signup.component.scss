@@ -1,11 +1,53 @@
 .background {
-    background-image: url('../../assets/background-login-signup.jpg'); 
+    background-image: url('../../assets/background-login-signup.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .signupContainer {
-        width: 300px;
-        height: 200px;
+        width: 52vw;
+        height: 77vh;
         background: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 37vw;
+            display: flex;
+            align-items: center;
+            .title {
+                width: 56vw;
+                display: flex;
+                align-items: center;
+                color: black;
+                margin: 20px 0;
+                display: flex;
+                justify-content: center;
+                &::before,
+                &::after {
+                  content: '';
+                  width: 25%;
+                  height: 2px;
+                  background-color: black;
+                }
+              
+                &::before {
+                  margin-right: 15px;
+                }
+              
+                &::after {
+                  margin-left: 15px;
+                }
+              }
+        }
     }
 }

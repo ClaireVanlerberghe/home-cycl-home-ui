@@ -12,8 +12,8 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   // Méthode pour s'inscrire
-  signup(name: string, email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/signup`, { name, email, password });
+  signup(email: string, firstName: string, lastName: string, address: string | null, phone: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/signup`, { email, firstName, lastName, address, phone, password });
   }
 
   // Méthode pour se connecter

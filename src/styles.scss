@@ -15,12 +15,15 @@ h1 {
 
 p {
     font-size: 20px;
+    font-family: "Jomolhari", serif;
 }
 
 h2 {
     font-weight: 300;
     font-size: 35px;
     margin: 0;
+    font-family: "Jomolhari", serif;
+    padding-left: 2%;
 }
 
 .bouton {
@@ -47,4 +50,13 @@ input {
     color: black;
     outline: none;
     margin-bottom: 32px;
+}
+
+.p-dialog-title {
+    font-family: "Jomolhari", serif;
+    font-size: 25px;
+}
+
+.p-button {
+    color: white;
 }

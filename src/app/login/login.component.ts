@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DialogConfirmAddressComponent } from '../modales/dialog-confirm-address/dialog-confirm-address.component';
 
 @Component({
   selector: 'app-login',
@@ -13,19 +15,27 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
+  ref: DynamicDialogRef | undefined;
+
   searchQuery: string = '';
   suggestions: any[] = [];
   showNoSuggestions: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router, private http: HttpClient) { }
+  constructor(private authService: AuthService, private router: Router, private http: HttpClient, public dialogService: DialogService) { }
 
   connexionButtom() {
-    console.log('value (email) : ', this.email);
-    console.log('value (password) : ', this.password);
     this.authService.login(this.email, this.password).subscribe(
       (response) => {
         console.log('Connexion réussie', response);
         this.router.navigate(['/']);
+        this.ref = this.dialogService.open(DialogConfirmAddressComponent, 
+          { 
+            data: { email: this.email }, 
+            header: 'Je valide mon adresse',
+            width: '27%',
+            height: '27%',
+            closable: false,
+        });
       },
       (error) => {
         console.error('Erreur lors de la connexion', error);
