@@ -8,10 +8,10 @@ import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 })
 export class DialogConfirmAddressComponent {
 
-  email: any;
+  address: any;
 
   constructor(public ref: DynamicDialogRef, public config: DynamicDialogConfig) {
-    this.email = this.config.data.email;
+    this.address = this.config.data.address;
   }
 
   close() {

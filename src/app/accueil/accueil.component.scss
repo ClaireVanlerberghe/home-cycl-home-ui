@@ -23,7 +23,8 @@
 .cards ::ng-deep .p-carousel-container {
     border-radius: 12px;
     padding: 20px 10px;
-   
+    width: min-content;
+    height: 221px;
   }
   
   /* Style des items */
@@ -38,7 +39,7 @@
     flex-direction: column;
     justify-content: space-between;
     background: white;
-    
+    cursor: pointer;
     border-radius: 12px;
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -46,14 +47,14 @@
   }
   
   .cards ::ng-deep .p-carousel-item .border-1:hover {
-    transform: scale(1.01); /* Effet zoom sur hover */
+    transform: scale(1.01);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
   }
 
   .cards ::ng-deep .p-carousel-item {
     display: flex;
-    justify-content: center; /* Centrer les cartes dans le carousel */
-    padding: 0 10px; /* Espacement horizontal */
+    justify-content: center;
+    padding: 0 20px;
   }
   
   /* Titre des items */
@@ -83,23 +84,23 @@
   .cards ::ng-deep .p-carousel-prev,
   .cards ::ng-deep .p-carousel-next {
     font-size: 3rem !important;
-    width: 50px; /* Largeur des boutons de navigation */
-    height: 50px; /* Hauteur des boutons de navigation */
-    background-color: transparent; /* Fond transparent */
-    border: none; /* Pas de bordure */
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: none; /* Pas de shadow */
-    color: #101010; /* Couleur des flèches */
-    cursor: pointer; /* Curseur de la souris */
+    box-shadow: none;
+    color: #101010;
+    cursor: pointer;
     transition: color 0.3s ease;
   }
   
   .cards ::ng-deep .p-carousel-prev:hover,
   .cards ::ng-deep .p-carousel-next:hover {
     color: black;
-    transform: scale(1.10);
+    transform: scale(1.15);
   }
   
   /* Pagination (indicateurs) */

@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogConfirmAddressComponent } from './modales/dialog-confirm-address/dialog-confirm-address.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DialogConfirmAddressComponent } from './modales/dialog-confirm-address/
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    DialogConfirmAddressComponent
+    DialogConfirmAddressComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
