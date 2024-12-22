@@ -55,7 +55,12 @@
 //CSS pour input autocomplète
 .autocomplete-container {
   position: relative;
-  width: 300px;
+  width: 66%;
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .suggestions {

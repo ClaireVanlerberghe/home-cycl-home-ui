@@ -19,9 +19,7 @@
                     {{ suggestion.properties.label }}
                   </li>
                 </ul>
-                <div class="no-suggestions" *ngIf="showNoSuggestions">
-                  Aucune suggestion trouvée.
-                </div>
+                
               </div>
               
             <button class="bouton" (click)="addSuggestionLocalStorage(searchQuery)">Valider</button>

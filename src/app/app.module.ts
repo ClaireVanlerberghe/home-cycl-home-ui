@@ -18,6 +18,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogConfirmAddressComponent } from './modales/dialog-confirm-address/dialog-confirm-address.component';
 import { ProfilComponent } from './profil/profil.component';
+import { InterventionsComponent } from './interventions/interventions.component';
+import { RouterLink } from '@angular/router';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { ProfilComponent } from './profil/profil.component';
     LoginComponent,
     SignupComponent,
     DialogConfirmAddressComponent,
-    ProfilComponent
+    ProfilComponent,
+    InterventionsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { ProfilComponent } from './profil/profil.component';
     CarouselModule,
     ButtonModule,
     FormsModule,
-    DynamicDialogModule
+    DynamicDialogModule, 
+    RouterLink
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

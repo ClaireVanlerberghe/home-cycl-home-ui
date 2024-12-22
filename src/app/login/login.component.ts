@@ -30,7 +30,7 @@ export class LoginComponent {
         this.router.navigate(['/']);
         this.ref = this.dialogService.open(DialogConfirmAddressComponent, 
           { 
-            data: { address: response.address }, 
+            data: { address: response }, 
             header: 'Je valide mon adresse',
             width: '27%',
             height: '27%',
