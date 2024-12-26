@@ -4,6 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { Intervention } from '../interfaces/intervention.model';
 import { InterventionsService } from '../services/interventions.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { InterventionsService } from '../services/interventions.service';
 export class AccueilComponent implements OnInit{
   interventions: any[] = []
 
-  constructor(private interventionsService: InterventionsService) { }
+  constructor(private interventionsService: InterventionsService, private router: Router) { }
 
   ngOnInit(): void {
     this.interventionsService.getInterventions().subscribe(
@@ -27,6 +28,10 @@ export class AccueilComponent implements OnInit{
         console.error('Erreur lors de la récupération des interventions:', error);
       }
     );
+  }
+
+  goToEntretiens() {
+    this.router.navigate(['/entretiens'])
   }
   }
 

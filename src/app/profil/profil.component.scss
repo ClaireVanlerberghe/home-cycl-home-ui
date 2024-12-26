@@ -21,3 +21,44 @@
       margin-left: 20px;
     }
   }
+
+.profilSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .profilOne {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    
+    .profilElement {
+      display: flex; 
+      gap: 10px;
+      .underline {
+        text-decoration: underline;
+      }
+    }
+    .profilButton {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+  .profilInput {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    input {
+      width: 43%;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    .profilButton {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+}

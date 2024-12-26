@@ -1,9 +1,9 @@
 <div class="interventionsContainer">
     <div *ngFor="let intervention of interventions">
-        <div class="intervention">
+        <div class="intervention" (click)="goToIntervention(intervention.Id_intervention)">
             <p class="interventionTitle">{{ intervention.title }}</p>
             <p class="interventionDescription">{{ intervention.description }}</p>
-            <p class="interventionPrice">{{ intervention.price }}</p>
+            <p class="interventionPrice">{{ intervention.price | priceFormatter }}</p>
         </div>
     </div>
 </div>

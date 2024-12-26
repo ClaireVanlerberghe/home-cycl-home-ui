@@ -13,4 +13,8 @@ export class InterventionsService {
   getInterventions(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/interventions`);
   }
+
+  getInterventionById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/interventions/${id}`);
+  }
 }

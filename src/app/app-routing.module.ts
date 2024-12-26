@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ProfilComponent } from './profil/profil.component';
 import { InterventionsComponent } from './interventions/interventions.component';
+import { OneInterventionComponent } from './one-intervention/one-intervention.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent, pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profil', component: ProfilComponent },
   { path: 'entretiens', component: InterventionsComponent },
+  { path: 'entretien/:id', component: OneInterventionComponent },
   { path: '**', redirectTo: '' }
 
 ];

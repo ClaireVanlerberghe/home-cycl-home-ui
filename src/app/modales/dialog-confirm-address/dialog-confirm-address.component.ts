@@ -11,12 +11,12 @@ export class DialogConfirmAddressComponent {
   address: any;
 
   constructor(public ref: DynamicDialogRef, public config: DynamicDialogConfig) {
-    this.address = this.config;
+    this.address = this.config.data.address.user.address;
   }
 
 
   close() {
-    console.log('address', this.address)
+    console.log('address', this.address.user.address)
     this.ref.close(DialogConfirmAddressComponent)
   }
 

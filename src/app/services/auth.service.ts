@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
@@ -21,13 +21,25 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/login`, { email, password }).pipe(
       tap((response) => {
         if (response.token) {
+          console.log('response', response)
           localStorage.setItem('token', response.token); 
+          localStorage.setItem('user', response.user.email);
         }
       }),
       catchError((error) => {
         throw error;
       })
     );
+  }
+
+  // Méthode pour récuperer un utilisateur
+  getUser(email: string | null): Observable<any> {
+    let params = new HttpParams();
+    if (email !== null) {
+      params = params.set('email', email);
+      console.log('récup user ?', email)
+    }
+    return this.http.get<any>(`${this.apiUrl}/getUser`, { params });
   }
 
   // Méthode pour vérifier si l'utilisateur est connecté

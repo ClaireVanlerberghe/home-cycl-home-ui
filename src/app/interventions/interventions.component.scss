@@ -1,19 +1,17 @@
 // Conteneur principal
 .interventionsContainer {
     display: flex;
-    flex-wrap: wrap; // Retourne à la ligne si les cartes débordent
-    gap: 20px; // Espacement entre les cartes
-    justify-content: center; // Centrer les cartes horizontalement
-    padding: 20px; // Espacement interne
-    background-color: #f8f8f8; // Couleur de fond
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
   }
-  
-  // Style des cartes
+
   .intervention {
-    background: #ffffff; // Fond blanc
-    border-radius: 15px; // Coins arrondis
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre subtile
-    padding: 20px; // Espacement interne
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     height: 300px;
     max-width: 300px; // Largeur maximale d'une carte
     min-width: 200px; // Largeur minimale d'une carte
@@ -21,22 +19,20 @@
     transition: transform 0.2s, box-shadow 0.2s; // Animation fluide
     display: flex;
     flex-direction: column;
-    
+    cursor: pointer;
     &:hover {
       transform: translateY(-5px); // Légère élévation au survol
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); // Accentuation de l'ombre
     }
   }
-  
-  // Titre de l'intervention
+
   .interventionTitle {
     font-size: 1.2em; // Taille du titre
     margin-bottom: 10px; // Espacement après le titre
     color: #333; // Texte sombre
     font-weight: bold; // Mettre en gras
   }
-  
-  // Description de l'intervention
+
   .interventionDescription {
     font-size: 0.95em; // Texte légèrement plus petit
     line-height: 1.6; // Hauteur de ligne
@@ -44,23 +40,21 @@
     margin-bottom: 15px; // Espacement avant le prix
   }
   
-  // Prix de l'intervention
   .interventionPrice {
     font-weight: bold; // Gras pour le prix
     color: #000; // Couleur noire
     font-size: 1.1em; // Taille légèrement plus grande
   }
   
-  // Responsive Design pour tablettes et mobiles
   @media (max-width: 768px) {
     .intervention {
-      flex: 1 1 calc(50% - 20px); // 2 colonnes sur tablettes
+      flex: 1 1 calc(50% - 20px);
     }
   }
   
   @media (max-width: 480px) {
     .intervention {
-      flex: 1 1 100%; // Une seule colonne sur mobile
+      flex: 1 1 100%;
     }
   }
   

@@ -20,6 +20,9 @@ import { DialogConfirmAddressComponent } from './modales/dialog-confirm-address/
 import { ProfilComponent } from './profil/profil.component';
 import { InterventionsComponent } from './interventions/interventions.component';
 import { RouterLink } from '@angular/router';
+import { OneInterventionComponent } from './one-intervention/one-intervention.component';
+import { DurationPipe } from './pipe/duration.pipe';
+import { PriceFormatterPipe } from './pipe/priceFormatter';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { RouterLink } from '@angular/router';
     SignupComponent,
     DialogConfirmAddressComponent,
     ProfilComponent,
-    InterventionsComponent
+    InterventionsComponent,
+    OneInterventionComponent,
+    DurationPipe,
+    PriceFormatterPipe
   ],
   imports: [
     BrowserModule,

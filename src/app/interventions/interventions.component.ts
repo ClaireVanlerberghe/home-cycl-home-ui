@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InterventionsService } from '../services/interventions.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class InterventionsComponent implements OnInit {
 
   interventions: any[] = []
 
-  constructor(private interventionService: InterventionsService) {
+  constructor(private router: Router, private interventionService: InterventionsService) {
 
   }
 
@@ -22,11 +23,14 @@ export class InterventionsComponent implements OnInit {
     this.interventionService.getInterventions().subscribe({
       next: (data) => {
         this.interventions = data
-        
+        console.log('data', data)
       }
     })
 
   }
 
-
+  goToIntervention(interventionId: number) {
+    console.log('recupération ID', interventionId)
+    this.router.navigate(['/entretien', interventionId])
+  }
 }

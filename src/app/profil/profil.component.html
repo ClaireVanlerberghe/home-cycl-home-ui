@@ -1,6 +1,63 @@
 <h2 class="title">Mon profil</h2>
 <div class="profilSection">
-    <div class="profilOne">
-        
+
+    <div class="profilOne" *ngIf="!hideFields['lastName']">
+        <div class="profilElement">
+            <p class="underline">Nom :</p>
+            <p>{{ user.lastName }}</p>
+        </div>
+        <button class="profilButton" (click)="toggleField('lastName')"><i class="pi pi-pencil" style="font-size: 1.5rem"></i></button>
+    </div>
+    <div class="profilInput" *ngIf="hideFields['lastName']">
+        <input type="text" placeholder="Nom">
+        <button class="profilButton" (click)="toggleField('lastName')"><i class="pi pi-check" style="font-size: 1.5rem"></i></button>
+    </div>
+
+    <div class="profilOne" *ngIf="!hideFields['firstName']">
+        <div class="profilElement">
+            <p class="underline">Prénom :</p>
+            <p>{{ user.firstName }}</p>
+        </div>
+        <button class="profilButton" (click)="toggleField('firstName')"><i class="pi pi-pencil" style="font-size: 1.5rem"></i></button>
+    </div>
+    <div class="profilInput" *ngIf="hideFields['firstName']">
+        <input type="text" placeholder="Prénom">
+        <button class="profilButton" (click)="toggleField('firstName')"><i class="pi pi-check" style="font-size: 1.5rem"></i></button>
+    </div>
+
+    <div class="profilOne" *ngIf="!hideFields['email']">
+        <div class="profilElement">
+            <p class="underline">Email :</p>
+            <p>{{ user.email }}</p>
+        </div>
+        <button class="profilButton" (click)="toggleField('email')"><i class="pi pi-pencil" style="font-size: 1.5rem"></i></button>
+    </div>
+    <div class="profilInput" *ngIf="hideFields['email']">
+        <input type="text" placeholder="Email">
+        <button class="profilButton" (click)="toggleField('email')"><i class="pi pi-check" style="font-size: 1.5rem"></i></button>
+    </div>
+
+    <div class="profilOne" *ngIf="!hideFields['address']">
+        <div class="profilElement">
+            <p class="underline">Adresse :</p>
+            <p>{{ user.address }}</p>
+        </div>
+        <button class="profilButton" (click)="toggleField('address')"><i class="pi pi-pencil" style="font-size: 1.5rem"></i></button>
+    </div>
+    <div class="profilInput" *ngIf="hideFields['address']">
+        <input type="text" placeholder="Adresse">
+        <button class="profilButton" (click)="toggleField('address')"><i class="pi pi-check" style="font-size: 1.5rem"></i></button>
+    </div>
+
+    <div class="profilOne" *ngIf="!hideFields['phone']">
+        <div class="profilElement">
+            <p class="underline">Téléphone :</p>
+            <p>{{ user.phone }}</p>
+        </div>
+        <button class="profilButton" (click)="toggleField('phone')"><i class="pi pi-pencil" style="font-size: 1.5rem"></i></button>
+    </div>
+    <div class="profilInput" *ngIf="hideFields['phone']">
+        <input type="text" placeholder="Téléphone">
+        <button class="profilButton" (click)="toggleField('phone')"><i class="pi pi-check" style="font-size: 1.5rem"></i></button>
     </div>
 </div>
