@@ -27,6 +27,7 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe(
       (response) => {
         console.log('Connexion réussie', response);
+        
         this.router.navigate(['/']);
         this.ref = this.dialogService.open(DialogConfirmAddressComponent, 
           { 

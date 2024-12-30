@@ -16,7 +16,6 @@ export class DialogConfirmAddressComponent {
 
 
   close() {
-    console.log('address', this.address.user.address)
     this.ref.close(DialogConfirmAddressComponent)
   }
 

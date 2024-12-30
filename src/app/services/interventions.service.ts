@@ -15,6 +15,14 @@ export class InterventionsService {
   }
 
   getInterventionById(id: number): Observable<any> {
+    console.log('intervention_ID', id)
     return this.http.get<any>(`${this.apiUrl}/interventions/${id}`);
   }
+
+  getUserInterventionsByEmail(email: string | null): Observable<any> {
+    console.log('email envoyé', email)
+    return this.http.get<any>(`${this.apiUrl}/intervention_rdv?email=${email}`);
+  }
+
+
 }

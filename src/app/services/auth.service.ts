@@ -21,7 +21,7 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/login`, { email, password }).pipe(
       tap((response) => {
         if (response.token) {
-          console.log('response', response)
+          console.log('response', response.user.email)
           localStorage.setItem('token', response.token); 
           localStorage.setItem('user', response.user.email);
         }
@@ -34,12 +34,8 @@ export class AuthService {
 
   // Méthode pour récuperer un utilisateur
   getUser(email: string | null): Observable<any> {
-    let params = new HttpParams();
-    if (email !== null) {
-      params = params.set('email', email);
-      console.log('récup user ?', email)
-    }
-    return this.http.get<any>(`${this.apiUrl}/getUser`, { params });
+    console.log('getUser', email)
+    return this.http.post<any>(`${this.apiUrl}/getUser`, { email });
   }
 
   // Méthode pour vérifier si l'utilisateur est connecté

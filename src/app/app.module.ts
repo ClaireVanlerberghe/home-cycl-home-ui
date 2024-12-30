@@ -23,6 +23,7 @@ import { RouterLink } from '@angular/router';
 import { OneInterventionComponent } from './one-intervention/one-intervention.component';
 import { DurationPipe } from './pipe/duration.pipe';
 import { PriceFormatterPipe } from './pipe/priceFormatter';
+import { DateFormatPipe } from './pipe/date.pipe';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { PriceFormatterPipe } from './pipe/priceFormatter';
     InterventionsComponent,
     OneInterventionComponent,
     DurationPipe,
-    PriceFormatterPipe
+    PriceFormatterPipe,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { PriceFormatterPipe } from './pipe/priceFormatter';
     ButtonModule,
     FormsModule,
     DynamicDialogModule, 
-    RouterLink
+    RouterLink, 
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
