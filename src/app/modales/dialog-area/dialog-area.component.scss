@@ -1,0 +1,44 @@
+//CSS pour input autocomplète
+.autocomplete-container {
+    position: relative;
+    width: 66%;
+  }
+  
+  .form-control {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .suggestion {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .suggestion:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .no-suggestions {
+    padding: 10px;
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+  }

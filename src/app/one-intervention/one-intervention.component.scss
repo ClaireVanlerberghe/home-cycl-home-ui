@@ -1,0 +1,56 @@
+.intervention {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin: 0 10px;
+    .imgAndText {
+        display: flex;
+        width: 42%;
+        align-items: center;
+        gap: 20px;
+        img {
+            padding-right: 10px;
+        }
+    }
+    .priceAndDuration {
+        height: fit-content;
+        text-align: end;
+        padding-top: 35px;
+        p {
+            margin: 0;
+        }
+        .price {
+            font-size:25px;
+            font-weight: 500;
+        }
+        .duration {
+            font-size: 16px;
+        }
+    }
+}
+
+.appointment {
+    .title {
+        width: 56vw;
+        display: flex;
+        align-items: center;
+        color: black;
+        margin: 20px 0;
+        justify-content: center;
+        &::before,
+        &::after {
+          content: '';
+          width: 25%;
+          height: 2px;
+          background-color: black;
+        }
+      
+        &::before {
+          margin-right: 15px;
+        }
+      
+        &::after {
+          margin-left: 15px;
+        }
+      }
+}

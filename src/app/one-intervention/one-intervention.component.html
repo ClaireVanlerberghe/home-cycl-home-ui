@@ -1,8 +1,18 @@
 <div class="intervention">
-    <img src="../../assets/interventionPicture.png" alt="interventionPicture">
-    
-    <p>{{ intervention.title }}</p>
-    <p>{{ intervention.description }}</p>
-    <p>{{ intervention.price | priceFormatter }}</p>
-    <p>{{ intervention.duration | duration }}</p>
+    <div class="imgAndText">
+        <img src="../../assets/interventionPicture.png" alt="interventionPicture">
+        <div class="titleAndDescription">
+            <h1>{{ intervention.title }}</h1>
+            <p>{{ intervention.description }}</p>
+        </div>
+    </div>
+    <div class="priceAndDuration">
+        <p class="price">{{ intervention.price | priceFormatter }}</p>
+        <p class="duration">{{ intervention.duration | duration }}</p>
+    </div>
+</div>
+
+
+<div class="appointment">
+    <h1 class="title">Je choisis mon créneau</h1>
 </div>

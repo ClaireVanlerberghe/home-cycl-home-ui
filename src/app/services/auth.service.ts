@@ -12,8 +12,8 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   // Méthode pour s'inscrire
-  signup(email: string, firstName: string, lastName: string, address: string | null, phone: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/signup`, { email, firstName, lastName, address, phone, password });
+  signup(email: string, firstName: string, lastName: string, address: string, phone: string, password: string, latitude: number, longitude: number, Id_role: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/signup`, { email, firstName, lastName, address, phone, password, latitude: latitude, longitude: longitude, Id_role: Id_role });
   }
 
   // Méthode pour se connecter
@@ -52,4 +52,5 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem('token');
   }
+
 }

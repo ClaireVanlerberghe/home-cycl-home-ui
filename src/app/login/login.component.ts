@@ -58,6 +58,7 @@ export class LoginComponent {
 
     this.http.get(url).subscribe(
       (data: any) => {
+        console.log('data adresse', data)
         if (data.features.length > 0) {
           this.suggestions = data.features;
           this.showNoSuggestions = false;
@@ -76,11 +77,26 @@ export class LoginComponent {
     this.searchQuery = suggestion.properties.label;
     this.suggestions = [];
     this.showNoSuggestions = false;
-    console.log('select suggestion', this.searchQuery)
-  }
+  
 
-  addSuggestionLocalStorage(searchQuery: string) {
-    localStorage.setItem("address", searchQuery)
+    const [longitude, latitude] = suggestion.geometry.coordinates;
+  
+   
+    const addressData = {
+      address: suggestion.properties.label,
+      latitude: latitude,
+      longitude: longitude
+    };
+  
+    localStorage.setItem('addressData', JSON.stringify(addressData)); 
+  
+    console.log('Adresse et coordonnées sauvegardées dans le localStorage:', addressData);
   }
+  
+  addSuggestionLocalStorage(searchQuery: string) {
+    // Non nécessaire, cette fonctionnalité est désormais incluse dans selectSuggestion
+    console.warn('Cette méthode est maintenant gérée via selectSuggestion.');
+  }
+  
 
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 import { InterventionsService } from '../services/interventions.service';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DialogAreaComponent } from '../modales/dialog-area/dialog-area.component';
 
 @Component({
   selector: 'app-profil',
@@ -22,14 +24,26 @@ export class ProfilComponent implements OnInit {
   myInterventions: any = null;
   interventionInfo: any[] = []
   
+  ref: DynamicDialogRef | undefined;
 
-  constructor(private authService: AuthService, private userService: UserService, private interventionsService: InterventionsService) {
+  constructor(public dialogService: DialogService, private authService: AuthService, private userService: UserService, private interventionsService: InterventionsService) {
 
   }
 
   ngOnInit(): void {
     this.getUserWithEmail()
     this.getUserInterventions()
+  }
+
+  openDialogArea() {
+    this.ref = this.dialogService.open(DialogAreaComponent, {
+      header: 'Création de la zone géographique',
+      width: '70%',
+      data: {
+        user: this.user
+      }
+      
+  });
   }
 
   getUserWithEmail() {

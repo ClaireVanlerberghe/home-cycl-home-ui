@@ -24,6 +24,7 @@ import { OneInterventionComponent } from './one-intervention/one-intervention.co
 import { DurationPipe } from './pipe/duration.pipe';
 import { PriceFormatterPipe } from './pipe/priceFormatter';
 import { DateFormatPipe } from './pipe/date.pipe';
+import { DialogAreaComponent } from './modales/dialog-area/dialog-area.component';
 
 
 @NgModule({
@@ -39,7 +40,9 @@ import { DateFormatPipe } from './pipe/date.pipe';
     OneInterventionComponent,
     DurationPipe,
     PriceFormatterPipe,
-    DateFormatPipe
+    DateFormatPipe,
+    DialogAreaComponent,
+
   ],
   imports: [
     BrowserModule,
