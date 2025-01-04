@@ -1,22 +1,24 @@
-<div class="autocomplete-container">
-    <input
-      type="text"
-      class="form-control"
-      [(ngModel)]="searchQuery"
-      (input)="onSearch()"
-      placeholder="Saisissez une adresse"
-    />
-    <ul class="suggestions" *ngIf="suggestions.length > 0">
-      <li
-        *ngFor="let suggestion of suggestions"
-        class="suggestion"
-        (click)="selectSuggestion(suggestion)"
-      >
-        {{ suggestion.properties.label }}
-      </li>
-    </ul>
-    
+  <div class="container">
+    <div class="autocomplete-container">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="searchQuery"
+        (input)="onSearch()"
+        placeholder="Saisissez une adresse"
+      />
+      <ul class="suggestions" *ngIf="suggestions.length > 0">
+        <li
+          *ngFor="let suggestion of suggestions"
+          class="suggestion"
+          (click)="selectSuggestion(suggestion)"
+        >
+          {{ suggestion.properties.label }}
+        </li>
+      </ul>
+      
   </div>
-  <input type="number" placeholder="Rayon" [(ngModel)]="rayon"/>
-  
-<button class="bouton" (click)="addSuggestion()">Valider</button>
+  <input type="number" class="rayon" placeholder="Rayon" [(ngModel)]="rayon"/>
+    
+  <button class="bouton" (click)="addSuggestion()">Valider</button>
+</div>

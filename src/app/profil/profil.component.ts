@@ -4,6 +4,7 @@ import { UserService } from '../services/user.service';
 import { InterventionsService } from '../services/interventions.service';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DialogAreaComponent } from '../modales/dialog-area/dialog-area.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profil',
@@ -14,6 +15,8 @@ export class ProfilComponent implements OnInit {
 
   email: string | null = ''
   user: any = null
+
+  hideButton: boolean = false
 
   editLastName: string = '';
   editFirstName: string = '';
@@ -26,7 +29,7 @@ export class ProfilComponent implements OnInit {
   
   ref: DynamicDialogRef | undefined;
 
-  constructor(public dialogService: DialogService, private authService: AuthService, private userService: UserService, private interventionsService: InterventionsService) {
+  constructor(public dialogService: DialogService, private authService: AuthService, private userService: UserService, private interventionsService: InterventionsService, private router: Router) {
 
   }
 
@@ -38,7 +41,9 @@ export class ProfilComponent implements OnInit {
   openDialogArea() {
     this.ref = this.dialogService.open(DialogAreaComponent, {
       header: 'Création de la zone géographique',
-      width: '70%',
+      width: '40%',
+      height: '40%',
+      styleClass: 'dialogBody',
       data: {
         user: this.user
       }
@@ -51,6 +56,11 @@ export class ProfilComponent implements OnInit {
     this.authService.getUser(this.email).subscribe(
           (response) => {
             this.user = response.user
+            console.log('role_id', response)
+            localStorage.setItem('role_id', this.user.Id_role)
+            if(this.user.Id_role === 2) {
+              this.hideButton = true
+            }
           },
           (error) => {
             console.error('Erreur lors de la récupération utilisateur', error);
@@ -66,6 +76,7 @@ export class ProfilComponent implements OnInit {
     address: false,
     phone: false
   }
+
 
   toggleField(fieldName: string): void {
     this.hideFields[fieldName] = !this.hideFields[fieldName];
@@ -172,5 +183,9 @@ export class ProfilComponent implements OnInit {
     );
   }
  
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 
 }
