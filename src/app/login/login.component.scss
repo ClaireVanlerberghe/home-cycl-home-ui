@@ -96,3 +96,11 @@
   font-size: 14px;
   text-align: center;
 }
+.underline {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #000000;
+  &:hover {
+    color: #272949;
+  }
+}

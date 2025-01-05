@@ -25,3 +25,14 @@
 .modale {
     border-radius: 25%;
 }
+
+::ng-deep {
+    .p-dialog-content{
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    .p-dialog-header {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+ }

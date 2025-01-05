@@ -49,4 +49,8 @@ export class SignupComponent {
     }
   }
 
+  redirectTo() {
+    this.router.navigate(['/login'])
+  }
+
 }

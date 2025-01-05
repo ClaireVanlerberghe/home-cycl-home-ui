@@ -7,8 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  token: string | null = ''
+
   constructor(private router: Router) {
 
+  }
+
+  hideProfil() {
+    this.token = localStorage.getItem('token')
+    if(this.token === null) {
+      this.router.navigate(['/login'])
+    }
+    else {
+      this.router.navigate(['/profil'])
+    }
   }
 
 }

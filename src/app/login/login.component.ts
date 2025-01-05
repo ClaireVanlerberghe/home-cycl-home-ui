@@ -98,5 +98,8 @@ export class LoginComponent {
     console.warn('Cette méthode est maintenant gérée via selectSuggestion.');
   }
   
+  redirectTo() {
+    this.router.navigate(['/signup'])
+  }
 
 }

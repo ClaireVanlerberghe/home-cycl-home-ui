@@ -24,5 +24,8 @@ export class InterventionsService {
     return this.http.get<any>(`${this.apiUrl}/intervention_rdv?email=${email}`);
   }
 
+  getSlotsByIdUser(Id_user: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/slots/=${Id_user}`)
+  }
 
 }
