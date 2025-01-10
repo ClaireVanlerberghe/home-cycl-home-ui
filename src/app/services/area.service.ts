@@ -13,4 +13,8 @@ export class AreasService {
   createArea(latitude: number, longitude: number, rayon: number, Id_user: number): Observable<any> {
     return this.http.post(`${this.apiUrl}/create-area`, { latitude, longitude, rayon, Id_user });
   }
+
+  getArea(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/all-area`);
+  }
 }

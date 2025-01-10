@@ -35,7 +35,7 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserWithEmail()
-    this.getUserInterventions()
+    // this.getUserInterventions()
   }
 
   openDialogArea() {
@@ -184,7 +184,7 @@ export class ProfilComponent implements OnInit {
   }
  
   logout() {
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 

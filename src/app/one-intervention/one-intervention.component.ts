@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InterventionsService } from '../services/interventions.service';
 import { ActivatedRoute } from '@angular/router';
+import { AreasService } from '../services/area.service';
 
 @Component({
   selector: 'app-one-intervention',
@@ -11,7 +12,14 @@ export class OneInterventionComponent implements OnInit {
 
   intervention: any = null;
 
-  constructor(private route: ActivatedRoute, private interventionsService: InterventionsService) {
+  areas: any = null
+
+  addressCustomer: any = null
+
+  latitude: number = 0
+  longitude: number = 0
+
+  constructor(private route: ActivatedRoute, private interventionsService: InterventionsService, private areaService: AreasService) {
 
   }
 
@@ -21,6 +29,8 @@ export class OneInterventionComponent implements OnInit {
       this.getIntervention(id);
     });
     this.intervention
+    this.getAllArea()
+    this.getTech()
   }
 
   getIntervention(id: number): void {
@@ -30,6 +40,18 @@ export class OneInterventionComponent implements OnInit {
     });
   }
 
+  getAllArea() {
+    this.areaService.getArea().subscribe(
+      (area) => {
+        this.areas = area
+        console.log('AllArea', this.areas)
+      }
+    )
+  }
 
+  getTech() {
+    this.addressCustomer = localStorage.getItem('addressData')
+    console.log('addressCustomer', this.addressCustomer)
+  }
 
 }

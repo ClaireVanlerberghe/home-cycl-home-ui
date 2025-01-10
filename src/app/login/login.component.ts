@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DialogConfirmAddressComponent } from '../modales/dialog-confirm-address/dialog-confirm-address.component';
+
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,9 @@ export class LoginComponent {
   suggestions: any[] = [];
   showNoSuggestions: boolean = false;
 
+
   constructor(private authService: AuthService, private router: Router, private http: HttpClient, public dialogService: DialogService) { }
+
 
   connexionButtom() {
     this.authService.login(this.email, this.password).subscribe(
@@ -101,5 +104,6 @@ export class LoginComponent {
   redirectTo() {
     this.router.navigate(['/signup'])
   }
+
 
 }
